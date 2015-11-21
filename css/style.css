@@ -1,0 +1,94 @@
+body {
+    padding: 20px 30px;
+    height: 100%;
+    overflow: hidden;
+    background: #2c3e50;
+}
+* {
+    margin: 0;
+}
+
+#videoCanvas {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: #000;
+    display: none;
+}
+@media screen and (max-width: 800px) {
+    #videoCanvas {
+        position: absolute;
+        left: 300px;
+        width: 250px!important;
+        height: 200px!important;
+    }
+}
+.control-panel {
+    height: 250px;
+    position: relative;
+    width: 250px;
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: left;
+}
+#zone {
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    left: 50%;
+    top: 32px;
+    margin-left: -106px;
+}
+#debug {
+    padding: 20px;
+    display: none;
+}
+
+.mark-info {
+    padding: 20px;
+}
+.mark-info .markCount {
+    font-size: 30px;
+    font-weight: bold;
+    color: red;
+    font-style: italic;
+}
+.widget {
+    padding: 5px;
+    margin: 10px;
+}
+.btn {
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    line-height: 40px;
+    background: #fff;
+    outline: none;
+    border: 0;
+    font-weight: bold;
+    border-bottom: 2px solid #ddd;
+    font-size: 18px;
+    cursor: pointer;
+    font-family: 'OpenSansLight',sans-serif;
+    margin: 5px;
+}
+.btn:active {
+    position: relative;
+    top: 3px;
+}
+.cp-wrapper {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+}
+.msg {
+    color: #ddd;
+    line-height: 1.5em;
+}
+.msg span {
+    font-size: 1.2em;
+}
+.msg .distance {
+    display: none;
+}

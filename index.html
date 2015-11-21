@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>motionX</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, Maximum-scale=1,user-scalable=no">
+    <style>
+        body {
+            padding: 20px 30px;
+            height: 100%;
+            overflow: hidden;
+            background: #2c3e50;
+        }
+        * {
+            margin: 0;
+        }
+        .mask {
+            width: 320px;
+            height: 320px;
+            background: rgba(0,0,0,1);
+            position: absolute;
+            left: 30px;
+            top: 20px;
+            z-index: 10;
+            overflow: hidden;
+        }
+
+        .face {
+            width: 250px;
+            height: 250px;
+            margin: 0 auto;
+            background: url(images/face.png) no-repeat center;
+            background-size: 100%;
+            z-index: 100;
+        }
+
+        .poptip {
+            color: #fff;
+            -webkit-transition: all 1s ease;
+            -ms-transition: all 1s ease;
+            -o-transition: all 1s ease;
+            transition: all 1s ease;
+            opacity: 1;
+
+            position: absolute;
+            bottom: -20px;
+            width: 100%;
+            left: 0;
+            text-align: center;
+        }
+
+
+        .poptip-active {
+            opacity: 1;
+            -webkit-transform: translate(0, -80px);
+            -ms-transform: translate(0, -80px);
+            -o-transform: translate(0, -80px);
+            transform: translate(0, -80px);
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- 控制台 -->
+    <div class="cp-wrapper">
+        <!-- 动作检测模块 -->
+        <div class="motion-detect">
+            <video id="monitor" autoplay style="display: none; width: 320px; height: 320px;"></video>
+            <div id="canvasLayers"  width="320" height="320"  style="position: relative; left: 0px; top: 0px;">
+            <canvas id="videoCan" width="320" height="320" style="z-index: 1; position: absolute; left:0px; top:0px;"></canvas>
+            <canvas id="layer2" width="320" height="320" style="z-index: 2; position: absolute; left:0px; top:0px; opacity:0.5;"></canvas>
+            </div>
+            <canvas id="blendCanvas" style="display: none; position: relative; left: 320px; top: 320px; width: 320px; height: 320px;"></canvas>
+        </div>
+
+        <div class="mask">
+            <div class="face"></div>
+
+            <span class="poptip">Hi, what can i do for you?</span>
+        </div>
+    </div>
+
+
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/motion-detect.js"></script>
+<script>
+function doAction(color) {
+    if(color == 'red') {
+
+    }
+
+    if(color == 'green') {
+        popUpTip();
+    }
+
+    if(color == 'blue') {
+        popDownTip();
+    }
+}
+
+function popUpTip() {
+    $('.poptip').addClass('poptip-active');
+}
+
+function popDownTip() {
+    $('.poptip').removeClass('poptip-active');
+}
+</script>
+</body>
+</html>
