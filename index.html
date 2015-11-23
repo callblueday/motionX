@@ -13,14 +13,48 @@
         }
         * {
             margin: 0;
+            padding: 0;
         }
-        .mask {
+        .cp-wrapper {
             width: 320px;
             height: 320px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .motion-detect {
+            width: 320px;
+            height: 320px;
+            position: relative;
+        }
+
+        #monitor {
+            display: none; 
+            width: 100%; 
+            height: 100%;
+        }
+        #canvasLayers {
+            width: 100%;
+            height: 100%;
+            position: relative; left: 0px; top: 0px;
+        }
+        #videoCan {
+            z-index: 1; position: absolute; left:0px; top:0px;
+        }
+        #layer2 {
+            z-index: 2; position: absolute; left:0px; top:0px; opacity:0.5;
+        }
+        #blendCanvas {
+            display: none; position: relative; left: 100%; top: 100%;
+        }
+
+        .mask {
+            width: 100%;
+            height: 100%;
             background: rgba(0,0,0,1);
             position: absolute;
-            left: 30px;
-            top: 20px;
+            left: 0px;
+            top: 0px;
             z-index: 10;
             overflow: hidden;
         }
@@ -66,12 +100,12 @@
     <div class="cp-wrapper">
         <!-- 动作检测模块 -->
         <div class="motion-detect">
-            <video id="monitor" autoplay style="display: none; width: 320px; height: 320px;"></video>
-            <div id="canvasLayers"  width="320" height="320"  style="position: relative; left: 0px; top: 0px;">
-            <canvas id="videoCan" width="320" height="320" style="z-index: 1; position: absolute; left:0px; top:0px;"></canvas>
-            <canvas id="layer2" width="320" height="320" style="z-index: 2; position: absolute; left:0px; top:0px; opacity:0.5;"></canvas>
+            <video id="monitor" autoplay></video>
+            <div id="canvasLayers">
+                <canvas id="videoCan" width="320" height="320"></canvas>
+                <canvas id="layer2" width="320" height="320"></canvas>
             </div>
-            <canvas id="blendCanvas" style="display: none; position: relative; left: 320px; top: 320px; width: 320px; height: 320px;"></canvas>
+            <canvas id="blendCanvas" width="320" height="320"></canvas>
         </div>
 
         <div class="mask">
