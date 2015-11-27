@@ -1,5 +1,6 @@
 body {
-    padding: 20px 30px;
+    /*padding: 20px 30px;*/
+    padding: 5px;
     height: 100%;
     overflow: hidden;
     background: #2c3e50;
@@ -35,9 +36,8 @@ body {
     width: 250px;
     height: 250px;
     position: absolute;
-    left: 50%;
-    top: 32px;
-    margin-left: -106px;
+    left: 0;
+    top: 0;
 }
 #debug {
     padding: 20px;
@@ -91,4 +91,15 @@ body {
 }
 .msg .distance {
     display: none;
+}
+
+
+/* for Mini Cs */
+.ops {
+    width: 250px;
+    height: 250px;
+    border: 1px solid #fff;
+    position: absolute;
+    right: 10px;
+    top: 20px;
 }

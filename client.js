@@ -31,6 +31,8 @@ socket.on('pushToWebClient', function(data) {
             $('.msg .distance').hide();
         }
     }
+
+    //
 });
 
 
@@ -186,7 +188,6 @@ function dump(evt) {
 /* debug ends */
 
 
-
 // fliker
 var isFliker = false,
     fliker = motion.flikering();
@@ -200,4 +201,62 @@ $('.fliker').on('click', function() {
         fliker.stop();
         $(this).html('灯光闪烁');
     }
-})
+});
+
+
+
+
+/*
+    音效处理
+*/
+var pathPrefix = 'media/';
+var audioList = {
+    'shot': pathPrefix + 'shot_ak47-1.wav',
+    'fill': pathPrefix + 'fill_aug_boltslap.wav',
+    'bhit': pathPrefix + 'bhit_2.wav',
+    'die': pathPrefix + 'die1.wav',
+    'shotbig': pathPrefix + 'shotbig_awp1.wav',
+    'relife': pathPrefix + 'shot_ak47-1.wav',
+    'bg': pathPrefix + 'bg_3dmstart.wav'
+};
+
+var audio = {
+    play: function(song, type) {
+        var isPlay;
+        var audioEl = document.createElement("audio");
+        // if (audio != null && audio.canPlayType && audio.canPlayType("audio/mpeg"))
+        if (audioEl != null && audioEl.canPlayType)
+        {
+            audioEl.src = song;
+            audioEl.play();
+        }
+
+        if(type == 'reload') {
+            var totalTime = audioEl.duration;
+            console.log(totalTime);
+            setInterval(function() {
+                audioEl.play();
+            }, totalTime);
+        }
+    }
+};
+
+$('.shot').on('click', function() {
+    audio.play(audioList.shot);
+});
+
+$('.die').on('click', function() {
+    audio.play(audioList.die);
+});
+
+$('.bg').on('click', function() {
+    audio.play(audioList.bg);
+});
+
+
+
+
+// 加载背景音乐
+window.onload = function() {
+    // audio.play(audioList.bg, 'reload');
+}
