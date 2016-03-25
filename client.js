@@ -11,7 +11,7 @@ var settings = {
 }
 
 // 从服务器接收数据
-var socket = io.connect('192.168.3.146:3001');
+var socket = io.connect('127.0.0.1:3001');
 socket.on('pushToWebClient', function(data) {
     // do sth.
     console.log(data)
