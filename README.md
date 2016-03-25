@@ -3,7 +3,7 @@ motionX is a experiment project. It includes mbot control panel and camera actio
 
 In mbot
 
-![mbot control](/public/images/mbot-control.png)
+![mbot control](images/mbot-control.png)
 
 # To Start
 
