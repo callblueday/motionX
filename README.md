@@ -17,6 +17,9 @@ You should put the project into a server environment(to be imporved).
 - **mbot.html** mbot online control panel
 - **index.html** camera motion detect control panel.
 
+# Resource
+- [mbot protocol guide](http://learn.makeblock.com/makeblock-orion-protocol/)
+
 # Change log
 【20151009 v0.1.0】
 >1. feat: init project and add mbot online control panel.
